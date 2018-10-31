@@ -39,8 +39,8 @@ public class PilotModel implements Serializable {
     @Column(name = "fly_hour", nullable = false)
     private int flyHour;
     
-    @OneToMany(mappedBy = "pilot", fetch = FetchType.LAZY)
-    private List<FlightModel> listFlight = new ArrayList<FlightModel>();
+//    @OneToMany(mappedBy = "pilot", fetch = FetchType.LAZY)
+//    private List<FlightModel> listFlight = new ArrayList<FlightModel>();
 
     /**
      * @param id the id to set
@@ -69,9 +69,9 @@ public class PilotModel implements Serializable {
     /**
      * @param listFlight the listFlight to set
      */
-    public void setListFlight(List<FlightModel> listFlight) {
-        this.listFlight = listFlight;
-    }
+//    public void setListFlight(List<FlightModel> listFlight) {
+//        this.listFlight = listFlight;
+//    }
 
     /**
      * @return the id
@@ -100,7 +100,7 @@ public class PilotModel implements Serializable {
     /**
      * @return the listFlight
      */
-    public List<FlightModel> getListFlight() {
-        return listFlight;
-    }
+//    public List<FlightModel> getListFlight() {
+//        return listFlight;
+//    }
 }

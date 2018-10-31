@@ -50,11 +50,15 @@ public class FlightModel implements Serializable {
     @Column(name = "time", nullable = false)
     private Date time;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "pilot_licenseNumber", referencedColumnName = "license_number")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private PilotModel pilot;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "pilot_licenseNumber", referencedColumnName = "license_number")
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//    @JsonIgnore
+//    private PilotModel pilot;
+    
+    @JoinColumn(name = "pilot_license_number", referencedColumnName =
+    		"license_number", nullable = false)
+    private String pilotLicenseNumber;
 
     /**
      * @param id the id to set
@@ -89,9 +93,9 @@ public class FlightModel implements Serializable {
     /**
      * @param pilot the pilot to set
      */
-    public void setPilot(PilotModel pilot) {
-        this.pilot = pilot;
-    }
+//    public void setPilot(PilotModel pilot) {
+//        this.pilot = pilot;
+//    }
 
     /**
      * @return the id
@@ -126,7 +130,14 @@ public class FlightModel implements Serializable {
     /**
      * @return the pilot
      */
-    public PilotModel getPilot() {
-        return pilot;
-    }
+//    public PilotModel getPilot() {
+//        return pilot;
+//    }
+	public String getPilotLicenseNumber() {
+		return pilotLicenseNumber;
+	}
+	public void setPilotLicenseNumber(String pilotLicenseNumber) {
+		this.pilotLicenseNumber = pilotLicenseNumber;
+	}
+    
 }
